@@ -62,7 +62,7 @@ class Libro(models.Model):
     paginas = models.PositiveIntegerField(db_index=True,)
     def __str__(self):
     
-        return f'Yo soy {self.titulo}'
+        return f' {self.titulo}'
 
     class Meta:
         constraints = [
@@ -75,7 +75,7 @@ class Autor(models.Model):
     libro = models.ManyToManyField(Libro, through='AutorCapitulo', related_name='libros_autores', through_fields=('autor', 'libro'))
 
     def __str__(self):
-        return f'Yo soy {self.nombre}'
+        return f' {self.nombre}'
 
 
 class LibroCronica(models.Model):
